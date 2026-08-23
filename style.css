@@ -305,6 +305,12 @@ footer .links a { margin-left: 20px; }
   margin-bottom: 10px;
 }
 
+.prose .entry-meta {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
 .prose p {
   color: var(--text-dim);
   font-size: 15.5px;
