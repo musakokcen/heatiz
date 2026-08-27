@@ -58,8 +58,13 @@ header .wrap {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: url('/assets/icon/icon-512.webp') center / cover no-repeat;
   display: inline-block;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -67,9 +72,28 @@ nav a {
   text-decoration: none;
   font-size: 14px;
   margin-left: 28px;
+  white-space: nowrap;
 }
 
 nav a:hover { color: var(--text); }
+
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+.nav-toggle-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle-btn svg { width: 18px; height: 18px; color: var(--text); }
+
+.nav-toggle:focus-visible ~ .nav-toggle-btn { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 
 .hero {
   padding: 88px 0 72px;
@@ -131,8 +155,13 @@ h1 span {
 .btn-primary {
   background: var(--text);
   color: var(--bg);
-  opacity: 0.5;
-  cursor: default;
+}
+
+.btn-primary:hover { background: #fff; }
+
+.apple-mark {
+  width: 16px;
+  height: 16px;
 }
 
 .btn-secondary {
@@ -142,50 +171,50 @@ h1 span {
 
 .btn-secondary:hover { border-color: var(--text-dim); }
 
-.badge-soon {
-  font-size: 11px;
-  font-weight: 700;
-  background: rgba(255, 90, 31, 0.15);
-  color: var(--accent);
-  padding: 2px 8px;
-  border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.heatmap-visual {
+.hero-shot {
   margin: 64px auto 0;
-  max-width: 720px;
-  aspect-ratio: 16 / 10;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(255, 90, 31, 0.55), transparent 45%),
-    radial-gradient(circle at 65% 60%, rgba(255, 177, 0, 0.5), transparent 40%),
-    radial-gradient(circle at 50% 20%, rgba(255, 90, 31, 0.35), transparent 35%),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 12.5%),
-    var(--pitch);
-  border: 1px solid var(--border);
+  max-width: 320px;
   position: relative;
-  overflow: hidden;
 }
 
-.heatmap-visual::before {
+.hero-shot::before {
   content: "";
   position: absolute;
-  inset: 6% 4%;
-  border: 2px solid rgba(255,255,255,0.18);
-  border-radius: 6px;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 90, 31, 0.35), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(255, 177, 0, 0.3), transparent 55%);
+  filter: blur(30px);
+  z-index: -1;
 }
 
-.heatmap-visual::after {
-  content: "";
-  position: absolute;
-  top: 6%;
-  bottom: 6%;
-  left: 50%;
-  width: 2px;
-  background: rgba(255,255,255,0.18);
+.hero-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
 }
+
+.showcase-strip {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 4px 4px 16px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.showcase-strip img {
+  flex: 0 0 auto;
+  height: 460px;
+  width: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  scroll-snap-align: start;
+}
+
+.showcase-strip::-webkit-scrollbar { height: 8px; }
+.showcase-strip::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
 
 section { padding: 72px 0; }
 
@@ -335,8 +364,26 @@ footer .links a { margin-left: 20px; }
 .contact-card p { color: var(--text-dim); font-size: 14.5px; }
 .contact-card h2 { font-size: 17px; margin-bottom: 4px; }
 
+@media (max-width: 720px) {
+  .nav-toggle-btn { display: inline-flex; }
+  header .wrap { flex-wrap: wrap; row-gap: 12px; }
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  nav a {
+    margin-left: 0;
+    padding: 14px 4px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+  }
+  .nav-toggle:checked ~ nav { display: flex; }
+}
+
 @media (max-width: 600px) {
-  nav { display: none; }
   footer .links a:first-child { margin-left: 0; }
   .contact-card { flex-direction: column; align-items: flex-start; }
+  .showcase-strip img { height: 340px; }
 }

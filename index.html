@@ -4,7 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heatiz — Your match, mapped.</title>
-<meta name="description" content="Heatiz records your soccer matches via Apple Watch and maps your GPS heatmap onto the exact pitch you played on, with full performance and readiness analytics.">
+<meta name="description" content="The fitness app built for soccer. Record matches on Apple Watch, replay every run as a GPS heatmap, and track goals, assists, and stats across your whole season.">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Heatiz — Your match, mapped.">
+<meta property="og:description" content="The fitness app built for soccer. Record matches on Apple Watch, replay every run as a GPS heatmap, and track goals, assists, and stats across your whole season.">
+<meta property="og:image" content="https://heatiz.com/assets/icon/icon-512.webp">
+<meta property="og:url" content="https://heatiz.com/">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,6 +23,10 @@
       <span class="logo-mark"></span>
       Heatiz
     </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
     <nav>
       <a href="#features">Features</a>
       <a href="/changelog">What's New</a>
@@ -33,13 +45,33 @@
         position is captured automatically and mapped onto the exact pitch you played on.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" aria-disabled="true">
-           App Store <span class="badge-soon">Coming soon</span>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6761580343" target="_blank" rel="noopener">
+          <svg class="apple-mark" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download on the App Store
         </a>
         <a class="btn btn-secondary" href="#features">See what it does</a>
       </div>
 
-      <div class="heatmap-visual" role="img" aria-label="Illustration of a soccer heatmap overlaid on a pitch"></div>
+      <div class="hero-shot">
+        <img src="/assets/screenshots/heatmap-mapped.webp" alt="Heatiz heatmap screen showing a player's GPS movement mapped onto a soccer pitch" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase divider">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>See it in action</h2>
+        <p>Every screen, straight from the App Store.</p>
+      </div>
+      <div class="showcase-strip">
+        <img src="/assets/screenshots/heatmap-mapped.webp" alt="Every match, mapped — GPS heatmap rendered on the pitch you played on" loading="lazy">
+        <img src="/assets/screenshots/match-context.webp" alt="Every match, in context — time, distance, calories, weather and full movement analytics" loading="lazy">
+        <img src="/assets/screenshots/season-story.webp" alt="Your season, your story — every match stacked into a scrollable season ledger" loading="lazy">
+        <img src="/assets/screenshots/readiness.webp" alt="Know when you're ready — Soccer Readiness score from training load, sleep and HRV" loading="lazy">
+        <img src="/assets/screenshots/share-game.webp" alt="Share the game — build a heatmap card and post it to Stories or your group chat" loading="lazy">
+        <img src="/assets/screenshots/home-widgets.webp" alt="Your season on Home Screen — readiness, last session and recent matches widgets" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -88,8 +120,13 @@
         </div>
         <div class="feature-card">
           <div class="icon">🔋</div>
-          <h3>Readiness score</h3>
-          <p>See how recovered you are for your next match based on sleep, heart rate and recent training load — and how ready you were for every match you've played.</p>
+          <h3>Soccer Readiness</h3>
+          <p>A daily readiness score from your sleep, HRV and recent training load tells you whether to push or rest — and how ready you were for every match you've played.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📤</div>
+          <h3>Shareable heatmap cards</h3>
+          <p>Build your card your way — style, layout, stats — then post it straight to Stories or the group chat.</p>
         </div>
         <div class="feature-card">
           <div class="icon">☁️</div>
@@ -102,11 +139,12 @@
 
   <section id="get-app" class="cta-band divider">
     <div class="wrap">
-      <h2>Heatiz is coming to the App Store</h2>
-      <p>Follow along for launch — record your first match and see it mapped.</p>
+      <h2>Heatiz is on the App Store</h2>
+      <p>Download it now — record your first match and see it mapped.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" aria-disabled="true">
-           App Store <span class="badge-soon">Coming soon</span>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6761580343" target="_blank" rel="noopener">
+          <svg class="apple-mark" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download on the App Store
         </a>
       </div>
     </div>
@@ -124,5 +162,12 @@
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('nav a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    document.getElementById('nav-toggle').checked = false;
+  });
+});
+</script>
 </body>
 </html>
