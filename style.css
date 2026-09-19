@@ -143,6 +143,7 @@ h1 span {
 .cta-row {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 14px;
   flex-wrap: wrap;
 }
@@ -159,16 +160,17 @@ h1 span {
   border: 1px solid transparent;
 }
 
-.btn-primary {
-  background: var(--text);
-  color: var(--bg);
+.app-store-badge {
+  display: inline-flex;
+  transition: opacity 0.2s;
 }
 
-.btn-primary:hover { background: #fff; }
+.app-store-badge:hover { opacity: 0.85; }
 
-.apple-mark {
-  width: 16px;
-  height: 16px;
+.app-store-badge img {
+  display: block;
+  height: 48px;
+  width: auto;
 }
 
 .btn-secondary {
