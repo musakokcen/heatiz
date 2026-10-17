@@ -354,6 +354,17 @@ footer .links a { margin-left: 20px; }
   font-size: 15.5px;
 }
 
+.prose ul {
+  color: var(--text-dim);
+  font-size: 15.5px;
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.prose li { margin-bottom: 6px; }
+
+.prose li:last-child { margin-bottom: 0; }
+
 .prose a { color: var(--accent-2); }
 
 .contact-card {
