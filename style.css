@@ -407,3 +407,44 @@ footer .links a { margin-left: 20px; }
   .contact-card { flex-direction: column; align-items: flex-start; }
   .showcase-strip img { height: 340px; }
 }
+
+/* Showcase device switcher (CSS-only) */
+.device-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  width: fit-content;
+  margin: 0 auto 32px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+}
+
+.device-tabs input { position: absolute; opacity: 0; pointer-events: none; }
+
+.device-tabs label {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.device-tabs label:hover { color: var(--text); }
+.device-tabs input:checked + label { background: var(--accent); color: var(--bg); }
+.device-tabs input:focus-visible + label { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+
+.showcase-panels .showcase-strip { display: none; }
+.device-tabs:has(#dev-iphone:checked) + .showcase-panels .shots-phone,
+.device-tabs:has(#dev-duo:checked) + .showcase-panels .shots-duo,
+.device-tabs:has(#dev-watch:checked) + .showcase-panels .shots-watch { display: flex; }
+
+.showcase-strip.shots-watch img { height: 340px; border-radius: 24px; }
+
+@media (max-width: 600px) {
+  .device-tabs label { padding: 8px 12px; font-size: 13px; }
+  .showcase-strip.shots-watch img { height: 260px; }
+}
